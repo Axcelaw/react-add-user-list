@@ -1,3 +1,4 @@
+import Button from "../Button/Button";
 import classes from "./AddUser.module.css";
 
 const AddUser = () => {
@@ -15,7 +16,7 @@ const AddUser = () => {
         <label>Age (Years)</label>
         <input type="number" step="1"></input>
       </div>
-      <button type="submit">Add User</button>
+      <Button buttonText="Add User" buttonType="submit" />
     </form>
   );
 };
