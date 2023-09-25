@@ -5,7 +5,7 @@ import classes from "./AddUser.module.css";
 
 const AddUser = ({ onAddNewUser }) => {
   const [nameState, setNameState] = useState("");
-  const [ageState, setAgeState] = useState(0);
+  const [ageState, setAgeState] = useState("");
 
   const nameChangeHandler = (event) => {
     setNameState(event.target.value);
@@ -15,9 +15,22 @@ const AddUser = ({ onAddNewUser }) => {
     setAgeState(event.target.value);
   };
 
+  const isUsernameValid = () => {
+    return nameState.trim().length !== 0;
+  };
+
+  const isAgeValid = () => {
+    return ageState.trim().length !== 0 && +ageState >= 1;
+  };
+
   const submitHandler = (event) => {
     event.preventDefault();
-    onAddNewUser({ username: nameState, age: ageState });
+
+    if (isUsernameValid() && isAgeValid()) {
+      setNameState("");
+      setAgeState("");
+      onAddNewUser({ username: nameState, age: ageState });
+    }
   };
 
   return (
