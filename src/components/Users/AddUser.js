@@ -46,7 +46,7 @@ const AddUser = ({ onAddNewUser }) => {
   };
 
   return (
-    <div>
+    <>
       {error && (
         <ErrorModal
           title={error.title}
@@ -74,7 +74,7 @@ const AddUser = ({ onAddNewUser }) => {
           <Button buttonType="submit">Add User</Button>
         </form>
       </Card>
-    </div>
+    </>
   );
 };
 
