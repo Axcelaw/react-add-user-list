@@ -14,7 +14,7 @@ const AddUser = () => {
         <input id="username" type="text"></input>
         <label htmlFor="age">Age (Years)</label>
         <input id="age" type="number" step="1"></input>
-        <Button buttonText="Add User" buttonType="submit" />
+        <Button buttonType="submit">Add User</Button>
       </form>
     </Card>
   );
