@@ -27,9 +27,9 @@ const AddUser = ({ onAddNewUser }) => {
     event.preventDefault();
 
     if (isUsernameValid() && isAgeValid()) {
+      onAddNewUser(nameState, ageState);
       setNameState("");
       setAgeState("");
-      onAddNewUser({ username: nameState, age: ageState });
     }
   };
 
