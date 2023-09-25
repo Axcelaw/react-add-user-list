@@ -3,7 +3,7 @@ import Button from "../UI/Button";
 import Card from "../UI/Card";
 import classes from "./AddUser.module.css";
 
-const AddUser = () => {
+const AddUser = ({ onAddNewUser }) => {
   const [nameState, setNameState] = useState("");
   const [ageState, setAgeState] = useState(0);
 
@@ -17,6 +17,7 @@ const AddUser = () => {
 
   const submitHandler = (event) => {
     event.preventDefault();
+    onAddNewUser({ username: nameState, age: ageState });
   };
 
   return (
